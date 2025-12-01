@@ -1,8 +1,7 @@
 import os
 import base64
-from math_function import simple_math_hash
-from utils import rotate_left, rotate_right, modular_add, modular_mul
-from primes import PRIME_CONSTS
+from math_function import mathhash_engine
+
 
 def hash_password ( password: str) -> str:
     
@@ -15,9 +14,9 @@ def hash_password ( password: str) -> str:
     combined = password_bytes + salt
 
 
-    hashed_value = simple_math_hash(combined) #TEMPORARY PLACE HOLDER
+    hashed_value = mathhash_engine(combined) #TEMPORARY PLACE HOLDER
 
-    hash_bytes = salt + hashed_value.to_bytes(4, 'big')
+    hash_bytes = salt + hashed_value.to_bytes(32, 'big')
     return base64.b64encode(hash_bytes).decode('utf-8')
 
 def verify_password ( password: str, stored: str) -> bool:
@@ -27,7 +26,7 @@ def verify_password ( password: str, stored: str) -> bool:
     combined = password.encode('utf-8') + salt
 
 
-    hashed_value = simple_math_hash(combined)#PLACEHOLDER 
+    hashed_value = mathhash_engine(combined)#PLACEHOLDER 
     return hashed_value == stored_hash
 
 
