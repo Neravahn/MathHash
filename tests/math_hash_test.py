@@ -22,7 +22,7 @@ def test_no_collision_in_random_inputs():
         hashes.add(h)
 
 
-def similar_inputs_do_not_collide():
+def test_similar_inputs_do_not_collide():
     base = 'mypassword1234'
     h1 = hash_password(base)
     h2 = hash_password(base + "a")
@@ -32,3 +32,15 @@ def similar_inputs_do_not_collide():
     assert h1 != h3
     assert h2 != h3
 
+
+
+def test_avalanch_effect():
+    base = "mypassword1234"
+    base_hash = hash_password(base)
+    for i in range(len(base)):
+        modified = base[:i] + chr((ord(base[i]) + 1) % 128) + base[i + 1:]
+        mod_hash = hash_password(modified)
+        assert base_hash != mod_hash
+
+
+        

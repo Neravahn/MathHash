@@ -4,7 +4,6 @@ from .primes import PRIME_CONSTS
 WORD_BITS = 256
 MOD = 1 << WORD_BITS
 MASK = MOD - 1
-
 # def expand_constants(n: int = 32):
 #     base = PRIME_CONSTS if len(PRIME_CONSTS) >= n else PRIME_CONSTS + [0x9E3779B185EBCA87]
 #     out = []
