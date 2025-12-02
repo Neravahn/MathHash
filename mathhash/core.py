@@ -1,9 +1,9 @@
 import os
 import base64
-from math_function import mathhash_engine
+from .math_function import mathhash_engine
 
 
-def hash_password ( password: str) -> str:
+def hash_password(password: str) -> str:
     
 
     #CONVERT PASSWORD INTO BYTES
@@ -19,7 +19,7 @@ def hash_password ( password: str) -> str:
     hash_bytes = salt + hashed_value.to_bytes(32, 'big')
     return base64.b64encode(hash_bytes).decode('utf-8')
 
-def verify_password ( password: str, stored: str) -> bool:
+def verify_password(password: str, stored: str) -> bool:
     data = base64.b64decode(stored)
     salt = data[:16]
     stored_hash = int.from_bytes(data[16:], 'big')

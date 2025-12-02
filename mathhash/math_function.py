@@ -1,5 +1,5 @@
-from utils import rotate_left, rotate_right, modular_add, modular_mul
-from primes import PRIME_CONSTS
+from .utils import rotate_left, rotate_right, modular_add, modular_mul
+from .primes import PRIME_CONSTS
 
 WORD_BITS = 256
 MOD = 1 << WORD_BITS
