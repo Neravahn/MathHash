@@ -1,0 +1,22 @@
+[project]
+name = "MathHash"
+version = "1.0.0"
+description = "A math-based 256-bit hashing engine written from scratch in Python."
+readme = "README.md"
+license = { file = "LICENSE" }
+authors = [
+  { name="Prashant Chaudhary", email="fin.prashant@outlook.com" }
+]
+
+requires-python = ">=3.8"
+
+keywords = ["hash", "cryptography", "math", "256-bit", "password"]
+
+[project.urls]
+Homepage = "https://github.com/Neravahn/MathHash"
+Source = "https://github.com/Neravahn/MathHash"
+Issues = "https://github.com/Neravahn/MathHash/issues"
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"

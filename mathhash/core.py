@@ -1,6 +1,6 @@
 import os
 import base64
-from .math_function import mathhash_engine
+from .engine import mathhash_engine
 
 
 def hash_password(password: str) -> str:
@@ -29,8 +29,3 @@ def verify_password(password: str, stored: str) -> bool:
     hashed_value = mathhash_engine(combined)#PLACEHOLDER 
     return hashed_value == stored_hash
 
-
-my_hash = hash_password("mypassword1234")
-print(my_hash)
-verify = verify_password("mypassword1234", my_hash)
-print("successfull" if verify else "unsuccessfull")

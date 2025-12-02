@@ -4,25 +4,12 @@ from .primes import PRIME_CONSTS
 WORD_BITS = 256
 MOD = 1 << WORD_BITS
 MASK = MOD - 1
-# def expand_constants(n: int = 32):
-#     base = PRIME_CONSTS if len(PRIME_CONSTS) >= n else PRIME_CONSTS + [0x9E3779B185EBCA87]
-#     out = []
-#     cur = 0x1234567890ABCDEF1234567890ABCDEF
-#     for i in range(n):
-#         p = base[i % len(base)]
-#         cur = (cur * (p | 1) + 0x9e3779b97f4a7c15 + i) & MASK
-        
-#     return out
-
-
 
 #MAIN MATH HASHING ENGINE
 def mathhash_engine(data: bytes, rounds: int = 32, block_bytes: int = 32) -> int:
 
     """
     MATH ONLY 256 BITS HASHING ENGINE"""
-
-    # RC = expand_constants(max(rounds, 16))
     RC = [
     0x243F6A8885A308D3,
     0x13198A2E03707344,
